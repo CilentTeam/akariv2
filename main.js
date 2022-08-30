@@ -310,7 +310,8 @@ key: {
 			if (!m.key.fromMe) return
 		}
 		
-    alfa.sendPresenceUpdate('unavailable', from)
+    alfa.sendPresenceUpdate('paused', store.chats.all().map(v => v.id))
+    alfa.sendPresenceUpdate('unavailable', store.chats.all().map(v => v.id))
     
 
 
