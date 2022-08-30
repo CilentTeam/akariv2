@@ -312,12 +312,12 @@ key: {
 		
     alfa.sendPresenceUpdate('unavailable', from)
     
-alfa.sendPresenceUpdate('composing', m.chat)
 
-		if (m.message) {
+
+	/*	if (m.message) {
             alfa.readMessages([m.key])
             }
-
+*/
        
        
        
@@ -4292,13 +4292,13 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 			}
 			case 'public': {
 				if (!isCreator) throw man.kus
-				alfa.self = true
+				alfa.public = true
 				m.reply('Sukse Change To Public Usage')
 			}
 			break
 			case 'self': {
 				if (!isCreator) throw man.kus
-				alfa.self = false
+				alfa.public = false
 				m.reply('Sukses Change To Self Usage')
 			}
 			break
