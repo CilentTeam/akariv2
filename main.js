@@ -306,11 +306,11 @@ key: {
   alfa.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
   }
 		
-		if (!alfa.public) {
+		if (!alfa.self) {
 			if (!m.key.fromMe) return
 		}
 		
-    alfa.sendPresenceUpdate('available', '0@s.whatsapp.net')
+    alfa.sendPresenceUpdate('unavailable', from)
     
 alfa.sendPresenceUpdate('composing', m.chat)
 
@@ -4292,13 +4292,13 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 			}
 			case 'public': {
 				if (!isCreator) throw man.kus
-				alfa.public = true
+				alfa.self = true
 				m.reply('Sukse Change To Public Usage')
 			}
 			break
 			case 'self': {
 				if (!isCreator) throw man.kus
-				alfa.public = false
+				alfa.self = false
 				m.reply('Sukses Change To Self Usage')
 			}
 			break
