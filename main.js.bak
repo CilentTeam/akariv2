@@ -17,16 +17,16 @@ const Database = require('./database.js')
 const dbs = new Database()
 const tthd = require('./scrape/ttkir')
 const path = require('path')
+const { ngazap } = require('./ngazap')
 const jimp = require('jimp')
 const { obfus } = require('./scrape/obfuscator')
 const { kusonime } = require('./scrape/kusonime')
 const ms = require('ms')
 const os = require('os')
-const { igdl, wiki, mediafire, tiktok, herodetail, herolist, shoppe, otaku, film, covid, twitter, pinterest, igstory, igstalk, ytdl, fbdown, playstore, lirik, komiku, linkwa, wattpad
+const { igdl, wiki, tiktok, herodetail, herolist, shoppe, otaku, film, covid, twitter, pinterest, igstory, igstalk, ytdl, fbdown, playstore, lirik, komiku, linkwa, wattpad
 } = require('./lib/main')
 const tt = require('./scrape/tiktok')
 const { xnxxsearch, xnxxdl } = require('./lib/xnxx')
-const { philip } = require('./bug/1.js')
 const { tiktokdl, tiktokdlv2, youtubeSearch } = require('@bochilteam/scraper')
 const { FajarNews, 
 BBCNews, 
@@ -774,12 +774,6 @@ break
 		alfa.sendMessage(from, { image: { url: rndm.thumbnail }, caption: `Judul: ${json.judul}\nLink: ${json.link}`}, { quoted: m })
 		}
 		break
-		case 'jadivirtex': {
-if (!q) return reply(`Contoh: ${command} Ushio`)
-let quotednya = await alfa.sendText(m.chat, `${q} ${philip}`)
-alfa.sendText(m.chat, `Virtex Nya Itu Bang`, quotednya)
-}
-break
 		case 'f': {
 	    alfa.sendMessage(m.chat, {text: "Affah"}, {quoted: ftrol})
 	    }
@@ -5341,7 +5335,7 @@ var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "productImage": messa.imageMessage,
 "productId": "7091718154232528",
 "title": `Tes Doank`,
-"description": `${philip}${philip}`,
+"description": `${ngazap(prefix)}${ngazap(prefix)}`,
 "currencyCode": "IDR",
 "priceAmount1000": "100000000000000000",
 "productImageCount": 1,
