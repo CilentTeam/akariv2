@@ -301,7 +301,7 @@ key: {
 
  if (budy.length > 1000) {
   reply("```「 ANTI VIRUS 」```"+"\n".repeat(999))
-  alfa.sendMessage(m.sender, { text: `Ngapain Sih Dek Ngirim" Virtex Ke Gc Org Dasar Yteam 🗿, Ngapa Ga Senang`}, { quoted: ftroli })
+  alfa.sendMessage(m.sender, { text: `Ngapain Sih Dek Ngirim" Virtex Ke Gc Org Dasar Yteam 🗿, Ngapa Ga Senang`}, { quoted: bug })
   if (!isBotAdmins) return reply(`Bot Bukan Admin`)
   alfa.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
   }
@@ -332,8 +332,6 @@ key: {
 		if (m.message) {
 			console.log(chalk.black(chalk.bgWhite('[ PESAN ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> Dari'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> Di'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
 		}
-		
-		if (from) { alfa.sendPresenceUpdate('availabe', from) }
 		
 		
 	
@@ -2432,7 +2430,7 @@ db.data.users[m.sender].limit -= 1
 				let quality = args[1] ? args[1] : '360p'
 				let media = await ytv(text, quality)
 				if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-				alfa.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `➤ Title : ${media.title}\n➤ File Size : ${media.filesizeF}\n➤ Url : ${isUrl(text)}\n➤ Ext : MP3\n➤ Resolusi : ${args[1] || '360p'}` }, { quoted: ftroli }).catch(e => {
+				alfa.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `➤ Title : ${media.title}\n➤ File Size : ${media.filesizeF}\n➤ Url : ${isUrl(text)}\n➤ Ext : MP3\n➤ Resolusi : ${args[1] || '360p'}` }, { quoted: m }).catch(e => {
                         console.log(e)
                         m.reply(`Fitur Eror`)
                     })
